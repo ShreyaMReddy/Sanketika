@@ -1,0 +1,3 @@
+org.elasticsearch.client.RestHighLevelClient
+
+bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092co.elastic.clients.transport.rest_client.RestClientTransport

@@ -1,0 +1,85 @@
+{
+    "mappings": {
+        "properties": {
+            "order_id": {
+                "type": "keyword"
+            },
+            "customer_id": {
+                "type": "keyword"
+            },
+            "order_date": {
+                "type": "date"
+            },
+            "status": {
+                "type": "keyword"
+            },
+            "total_amount": {
+                "type": "float"
+            },
+            "payment_method": {
+                "type": "keyword"
+            },
+            "items": {
+                "type": "nested",
+                "properties": {
+                    "product_id": {
+                        "type": "keyword"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    },
+                    "unit_price": {
+                        "type": "float"
+                    },
+                    "subtotal": {
+                        "type": "float"
+                    }
+                }
+            },
+            "shipping_address": {
+                "type": "nested",
+                "properties": {
+                    "street": {
+                        "type": "text"
+                    },
+                    "city": {
+                        "type": "keyword"
+                    },
+                    "state": {
+                        "type": "keyword"
+                    },
+                    "postal_code": {
+                        "type": "keyword"
+                    },
+                    "country": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "shipping_method": {
+                "type": "keyword"
+            },
+            "tracking_number": {
+                "type": "keyword"
+            },
+            "metadata": {
+                "type": "object",
+                "properties": {
+                    "created_by": {
+                        "type": "keyword"
+                    },
+                    "last_modified": {
+                        "type": "date"
+                    },
+                    "notes": {
+                        "type": "text"
+                    }
+                }
+            }
+        }
+    },
+    "settings": {
+        "number_of_shards": 3,
+        "number_of_replicas": 2
+    }
+}

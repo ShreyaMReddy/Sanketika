@@ -1,0 +1,45 @@
+{
+  "properties": {
+    "flowerId": {
+      "type": "keyword",
+      "id_field": true
+    },
+    "name": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "color": {
+      "type": "keyword"
+    },
+    "price": {
+      "type": "float"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "season": {
+      "type": "keyword"
+    },
+    "supplier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "keyword"
+        },
+        "name": {
+          "type": "text"
+        },
+        "location": {
+          "type": "keyword"
+        }
+      }
+    },
+    "lastUpdated": {
+      "type": "date"
+    }
+  }
+}

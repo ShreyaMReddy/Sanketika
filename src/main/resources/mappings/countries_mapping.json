@@ -1,0 +1,34 @@
+{
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "capital": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "population": {
+        "type": "long"
+      },
+      "processed_time": {
+        "type": "long"
+      },
+      "batch_id": {
+        "type": "keyword"
+      },
+      "_source_topic": {
+        "type": "keyword"
+      }
+    }
+  }
+}

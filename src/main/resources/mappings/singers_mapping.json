@@ -1,0 +1,109 @@
+{
+  "properties": {
+    "singerId": {
+      "type": "keyword"
+    },
+    "name": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "stageName": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "nationality": {
+      "type": "keyword"
+    },
+    "genres": {
+      "type": "keyword"
+    },
+    "activeYears": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        }
+      }
+    },
+    "albums": {
+      "type": "nested",
+      "properties": {
+        "name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "releaseDate": {
+          "type": "date"
+        },
+        "songs": {
+          "type": "nested",
+          "properties": {
+            "title": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "duration": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "awards": {
+      "type": "nested",
+      "properties": {
+        "name": {
+          "type": "keyword"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "keyword"
+        }
+      }
+    },
+    "monthlyListeners": {
+      "type": "long"
+    },
+    "socialMedia": {
+      "type": "object",
+      "properties": {
+        "instagram": {
+          "type": "keyword"
+        },
+        "twitter": {
+          "type": "keyword"
+        },
+        "youtube": {
+          "type": "keyword"
+        }
+      }
+    },
+    "lastUpdated": {
+      "type": "date"
+    }
+  }
+}

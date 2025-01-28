@@ -1,0 +1,92 @@
+{
+    "mappings": {
+        "properties": {
+            "customer_id": {
+                "type": "keyword"
+            },
+            "first_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "last_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "email": {
+                "type": "keyword"
+            },
+            "phone": {
+                "type": "keyword"
+            },
+            "address": {
+                "type": "nested",
+                "properties": {
+                    "street": {
+                        "type": "text"
+                    },
+                    "city": {
+                        "type": "keyword"
+                    },
+                    "state": {
+                        "type": "keyword"
+                    },
+                    "postal_code": {
+                        "type": "keyword"
+                    },
+                    "country": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "registration_date": {
+                "type": "date"
+            },
+            "last_purchase_date": {
+                "type": "date"
+            },
+            "customer_type": {
+                "type": "keyword"
+            },
+            "loyalty_points": {
+                "type": "integer"
+            },
+            "preferences": {
+                "type": "nested",
+                "properties": {
+                    "category": {
+                        "type": "keyword"
+                    },
+                    "preferred_contact": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "purchase_history": {
+                "type": "nested",
+                "properties": {
+                    "order_id": {
+                        "type": "keyword"
+                    },
+                    "purchase_date": {
+                        "type": "date"
+                    },
+                    "total_amount": {
+                        "type": "float"
+                    }
+                }
+            }
+        }
+    },
+    "settings": {
+        "number_of_shards": 3,
+        "number_of_replicas": 2
+    }
+}

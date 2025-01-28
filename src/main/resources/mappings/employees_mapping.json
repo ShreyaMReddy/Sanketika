@@ -1,0 +1,78 @@
+{
+    "mappings": {
+        "properties": {
+            "employee_id": {
+                "type": "keyword"
+            },
+            "first_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "last_name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "email": {
+                "type": "keyword"
+            },
+            "phone": {
+                "type": "keyword"
+            },
+            "hire_date": {
+                "type": "date"
+            },
+            "department": {
+                "type": "keyword"
+            },
+            "position": {
+                "type": "keyword"
+            },
+            "manager_id": {
+                "type": "keyword"
+            },
+            "salary": {
+                "type": "float"
+            },
+            "permissions": {
+                "type": "nested",
+                "properties": {
+                    "resource": {
+                        "type": "keyword"
+                    },
+                    "access_level": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "skills": {
+                "type": "keyword"
+            },
+            "projects": {
+                "type": "nested",
+                "properties": {
+                    "project_id": {
+                        "type": "keyword"
+                    },
+                    "role": {
+                        "type": "keyword"
+                    },
+                    "start_date": {
+                        "type": "date"
+                    }
+                }
+            }
+        }
+    },
+    "settings": {
+        "number_of_shards": 3,
+        "number_of_replicas": 2
+    }
+}
