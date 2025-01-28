@@ -1,0 +1,28 @@
+FROM eclipse-temurin:17-jre
+
+# Install required packages
+RUN apt-get update -y && \
+    apt-get install -y wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Flink version
+ENV FLINK_VERSION=1.17.1
+ENV SCALA_VERSION=2.12
+ENV FLINK_HOME=/opt/flink
+
+# Download and extract Flink
+RUN wget -P /opt https://archive.apache.org/dist/flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz && \
+    tar -xzf /opt/flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz -C /opt/ && \
+    ln -s /opt/flink-${FLINK_VERSION} /opt/flink && \
+    rm /opt/flink-${FLINK_VERSION}-bin-scala_${SCALA_VERSION}.tgz
+
+# Set environment variables
+ENV PATH=$PATH:$FLINK_HOME/bin
+
+WORKDIR $FLINK_HOME
+
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
