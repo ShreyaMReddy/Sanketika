@@ -108,5 +108,7 @@ For example docker exec elasticsearch curl -X GET "localhost:9200/countries/_sea
 ## Troubleshooting
 
 docker logs flink-jobmanager
+
 docker logs kafka
+
 docker logs elasticsearch
